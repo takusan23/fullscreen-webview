@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="UrlScreen" component={UrlScreen} />
         <Stack.Screen name="FullWebViewScreen" component={FullWebViewScreen} />
       </Stack.Navigator>

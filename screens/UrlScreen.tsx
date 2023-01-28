@@ -38,7 +38,7 @@ const UrlScreen: React.FC<UrlScreenProps> = ({ navigation }) => {
                     navigation.navigate('FullWebViewScreen', { url: inputUrl })
                 }}
             />
-            <StatusBar style='auto' />
+            <StatusBar hidden />
         </View>
     )
 }
