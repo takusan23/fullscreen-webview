@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import FullWebViewScreen from './screens/FullWebViewScreen';
+import UrlScreen from './screens/UrlScreen';
+import RootStackParamList from './screens/RootStackParamList';
 
-export default function App() {
+// React Navigation で型を保証する
+const Stack = createNativeStackNavigator<RootStackParamList>();
 
+/** エントリーポイント */
+const App = () => {
   return (
-    <View style={styles.container}>
-      <Text>ReactNative Expo 入門</Text>
-      <StatusBar hidden />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="UrlScreen" component={UrlScreen} />
+        <Stack.Screen name="FullWebViewScreen" component={FullWebViewScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default App
